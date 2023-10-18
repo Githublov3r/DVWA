@@ -22,7 +22,12 @@ pipeline {
 	    }
 	  }
 
-	
+	 stage ("Dynamic Analysis - OWASP ZAP") {
+		  steps {
+		  	sh "docker run -t owasp/zap2docker-stable zap-baseline.py -t https://aopartnersdev.com.ng/devsecops/ || true"
+		 	 }
+			}
+	    
 
 	
     
